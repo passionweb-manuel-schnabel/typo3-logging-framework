@@ -27,3 +27,10 @@ services:
           command: 'codebreak:log:configuration'
           description: 'Show which writers a logger gets from the LOG configuration'
           schedulable: false
+
+  Passionweb\LoggingApi\Command\LogChannelsCommand:
+    tags:
+      -   name: 'console.command'
+          command: 'codebreak:log:channels'
+          description: 'Group loggers of different classes into one channel'
+          schedulable: false

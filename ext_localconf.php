@@ -25,3 +25,13 @@ $GLOBALS['TYPO3_CONF_VARS']['LOG']['Passionweb']['LoggingApi']['writerConfigurat
         ],
     ],
 ];
+
+// A channel is just a logger name without dots. Classes from different
+// extensions can share it, and one entry configures all of them.
+$GLOBALS['TYPO3_CONF_VARS']['LOG']['security']['writerConfiguration'] ??= [
+    LogLevel::INFO => [
+        FileWriter::class => [
+            'logFileInfix' => 'security',
+        ],
+    ],
+];

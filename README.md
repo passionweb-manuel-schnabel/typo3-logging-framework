@@ -8,6 +8,8 @@
 
 1.2.0 Configures own writers for the extension namespace and shows the effective writers per logger.
 
+1.3.0 Groups loggers of different classes into the "security" channel via the #[Channel] attribute.
+
 ## Installation
 
 Add via composer:
