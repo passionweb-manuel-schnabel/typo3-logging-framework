@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 use Psr\Log\LogLevel;
+use TYPO3\CMS\Core\Log\Processor\IntrospectionProcessor;
+use TYPO3\CMS\Core\Log\Processor\MemoryUsageProcessor;
+use TYPO3\CMS\Core\Log\Processor\WebProcessor;
 use TYPO3\CMS\Core\Log\Writer\DatabaseWriter;
 use TYPO3\CMS\Core\Log\Writer\Enum\Interval;
 use TYPO3\CMS\Core\Log\Writer\FileWriter;
@@ -58,5 +61,26 @@ $GLOBALS['TYPO3_CONF_VARS']['LOG']['codebreak']['writerConfiguration'] ??= [
         SyslogWriter::class => [
             'disabled' => true,
         ],
+    ],
+];
+
+// Processors add data to a record before the writers receive it.
+$GLOBALS['TYPO3_CONF_VARS']['LOG']['processors']['writerConfiguration'] ??= [
+    LogLevel::DEBUG => [
+        FileWriter::class => [
+            'logFileInfix' => 'processors',
+        ],
+    ],
+];
+$GLOBALS['TYPO3_CONF_VARS']['LOG']['processors']['processorConfiguration'] ??= [
+    // Like writers, the key is the minimum level the processor runs for.
+    LogLevel::DEBUG => [
+        MemoryUsageProcessor::class => [],
+        // Adds request URL, host, user agent ... but only if there is a request.
+        WebProcessor::class => [],
+    ],
+    // A backtrace is expensive, so only errors and worse get one.
+    LogLevel::ERROR => [
+        IntrospectionProcessor::class => [],
     ],
 ];

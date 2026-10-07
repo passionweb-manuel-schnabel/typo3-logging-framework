@@ -14,6 +14,8 @@
 
 1.5.0 Logs placeholders, context data and exceptions and compares the file with the database.
 
+1.6.0 Enriches log records with the memory usage, web and introspection processor.
+
 ## Installation
 
 Add via composer:

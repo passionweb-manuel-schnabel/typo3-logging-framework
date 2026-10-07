@@ -48,3 +48,10 @@ services:
           command: 'codebreak:log:context'
           description: 'Log placeholders, context data and exceptions'
           schedulable: false
+
+  Passionweb\LoggingApi\Command\LogProcessorsCommand:
+    tags:
+      -   name: 'console.command'
+          command: 'codebreak:log:processors'
+          description: 'Enrich log records with memory usage, request data and a backtrace'
+          schedulable: false
