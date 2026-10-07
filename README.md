@@ -6,6 +6,8 @@
 
 1.1.0 Shows how logger names (components) are built and compares LogManager and LoggerAwareInterface.
 
+1.2.0 Configures own writers for the extension namespace and shows the effective writers per logger.
+
 ## Installation
 
 Add via composer:

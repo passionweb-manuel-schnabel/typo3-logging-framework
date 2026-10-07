@@ -20,3 +20,10 @@ services:
           command: 'codebreak:log:components'
           description: 'Show how logger names are built and how a logger is requested'
           schedulable: false
+
+  Passionweb\LoggingApi\Command\LogConfigurationCommand:
+    tags:
+      -   name: 'console.command'
+          command: 'codebreak:log:configuration'
+          description: 'Show which writers a logger gets from the LOG configuration'
+          schedulable: false
