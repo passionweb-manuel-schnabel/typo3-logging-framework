@@ -41,3 +41,10 @@ services:
           command: 'codebreak:log:writers'
           description: 'Write one record with the database, rotating file and PHP error log writer'
           schedulable: false
+
+  Passionweb\LoggingApi\Command\LogContextCommand:
+    tags:
+      -   name: 'console.command'
+          command: 'codebreak:log:context'
+          description: 'Log placeholders, context data and exceptions'
+          schedulable: false

@@ -12,6 +12,8 @@
 
 1.4.0 Writes one record with the DatabaseWriter, RotatingFileWriter and PhpErrorLogWriter.
 
+1.5.0 Logs placeholders, context data and exceptions and compares the file with the database.
+
 ## Installation
 
 Add via composer:
