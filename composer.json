@@ -1,0 +1,28 @@
+{
+  "name": "passionweb/logging-api",
+  "description": "Shows the usage of the TYPO3 Logging API",
+  "type": "typo3-cms-extension",
+  "minimum-stability": "stable",
+  "version": "1.0.0",
+  "homepage": "https://www.passionweb.de",
+  "authors": [
+    {
+      "name": "Manuel Schnabel",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^14.3"
+  },
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Passionweb\\LoggingApi\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "logging_api"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Passionweb\LoggingApi\:
+    resource: "../Classes/*"
+
+  Passionweb\LoggingApi\Command\LogBasicsCommand:
+    tags:
+      -   name: 'console.command'
+          command: 'codebreak:log:basics'
+          description: 'Log one message per PSR-3 log level and show what reaches the log file'
+          schedulable: false
