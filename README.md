@@ -4,6 +4,8 @@
 
 1.0.0 Get a logger via dependency injection and log one message per log level.
 
+1.1.0 Shows how logger names (components) are built and compares LogManager and LoggerAwareInterface.
+
 ## Installation
 
 Add via composer:
