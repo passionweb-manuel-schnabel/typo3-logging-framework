@@ -16,6 +16,8 @@
 
 1.6.0 Enriches log records with the memory usage, web and introspection processor.
 
+1.7.0 Implements an own log writer that writes JSON lines.
+
 ## Installation
 
 Add via composer:

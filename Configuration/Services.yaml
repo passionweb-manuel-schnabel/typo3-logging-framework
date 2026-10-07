@@ -55,3 +55,10 @@ services:
           command: 'codebreak:log:processors'
           description: 'Enrich log records with memory usage, request data and a backtrace'
           schedulable: false
+
+  Passionweb\LoggingApi\Command\LogCustomWriterCommand:
+    tags:
+      -   name: 'console.command'
+          command: 'codebreak:log:custom-writer'
+          description: 'Write log records as JSON lines with an own log writer'
+          schedulable: false

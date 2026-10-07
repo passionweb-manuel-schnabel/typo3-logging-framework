@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Passionweb\LoggingApi\Log\Writer\JsonLinesWriter;
 use Psr\Log\LogLevel;
 use TYPO3\CMS\Core\Log\Processor\IntrospectionProcessor;
 use TYPO3\CMS\Core\Log\Processor\MemoryUsageProcessor;
@@ -82,5 +83,14 @@ $GLOBALS['TYPO3_CONF_VARS']['LOG']['processors']['processorConfiguration'] ??= [
     // A backtrace is expensive, so only errors and worse get one.
     LogLevel::ERROR => [
         IntrospectionProcessor::class => [],
+    ],
+];
+
+// An own writer is configured exactly like a core writer.
+$GLOBALS['TYPO3_CONF_VARS']['LOG']['json']['writerConfiguration'] ??= [
+    LogLevel::DEBUG => [
+        JsonLinesWriter::class => [
+            'logFile' => 'codebreak.jsonl',
+        ],
     ],
 ];
