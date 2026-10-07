@@ -10,6 +10,8 @@
 
 1.3.0 Groups loggers of different classes into the "security" channel via the #[Channel] attribute.
 
+1.4.0 Writes one record with the DatabaseWriter, RotatingFileWriter and PhpErrorLogWriter.
+
 ## Installation
 
 Add via composer:

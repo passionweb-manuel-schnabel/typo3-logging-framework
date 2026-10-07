@@ -34,3 +34,10 @@ services:
           command: 'codebreak:log:channels'
           description: 'Group loggers of different classes into one channel'
           schedulable: false
+
+  Passionweb\LoggingApi\Command\LogWritersCommand:
+    tags:
+      -   name: 'console.command'
+          command: 'codebreak:log:writers'
+          description: 'Write one record with the database, rotating file and PHP error log writer'
+          schedulable: false
